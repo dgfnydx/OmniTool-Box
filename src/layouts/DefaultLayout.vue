@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue';
+import { ref, computed, onMounted, onUnmounted } from 'vue';
 import { RouterLink, RouterView } from 'vue-router';
 import { useI18n } from 'vue-i18n';
 import { useAppStore } from '../store/app';
@@ -23,10 +23,27 @@ const appStore = useAppStore();
 const isSidebarOpen = ref(true);
 const searchQuery = ref('');
 const isSearchFocused = ref(false);
+const searchInput = ref<HTMLInputElement | null>(null);
 
 const toggleSidebar = () => {
   isSidebarOpen.value = !isSidebarOpen.value;
 };
+
+// 快捷键监听
+const handleKeyDown = (e: KeyboardEvent) => {
+  if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+    e.preventDefault();
+    searchInput.value?.focus();
+  }
+};
+
+onMounted(() => {
+  window.addEventListener('keydown', handleKeyDown);
+});
+
+onUnmounted(() => {
+  window.removeEventListener('keydown', handleKeyDown);
+});
 
 const toggleLanguage = () => {
   locale.value = locale.value === 'en' ? 'zh' : 'en';
@@ -108,6 +125,7 @@ const handleToolClick = () => {
             <div class="omnibar" :class="{ 'is-active': isSearchFocused }">
               <Search :size="16" class="search-icon" />
               <input 
+                ref="searchInput"
                 type="text" 
                 :placeholder="t('common.search')" 
                 v-model="searchQuery" 
