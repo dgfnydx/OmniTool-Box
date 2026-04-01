@@ -12,6 +12,15 @@ const model = ref('cl100k_base'); // GPT-4/GPT-3.5 default
 
 const tokenCount = computed(() => {
   if (!input.value) return 0;
+  
+  if (model.value === 'chinese_general') {
+    // 估算规则：1 个汉字约 0.6-1.5 tokens，平均按 1.2 计
+    // 英文单词约 1.3 tokens
+    const chineseChars = (input.value.match(/[\u4e00-\u9fa5]/g) || []).length;
+    const otherChars = input.value.length - chineseChars;
+    return Math.ceil(chineseChars * 1.2 + (otherChars / 4) * 1.1); // 粗略估算
+  }
+
   try {
     const enc = getEncoding(model.value as any);
     const tokens = enc.encode(input.value);
@@ -57,6 +66,7 @@ const copyInput = () => {
             <option value="cl100k_base">cl100k_base (GPT-4 / GPT-3.5-Turbo)</option>
             <option value="p50k_base">p50k_base (GPT-3 / Codex)</option>
             <option value="r50k_base">r50k_base (GPT-2 / Older)</option>
+            <option value="chinese_general">Chinese General (Qwen, GLM, etc.)</option>
           </select>
         </div>
         <div class="header-right">
