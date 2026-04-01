@@ -12,6 +12,7 @@
     "@types/marked": "^6.0.0",
     "@types/prismjs": "^1.26.6",
     "colord": "^2.9.3",
+    "js-tiktoken": "^1.0.21",
     "lucide-vue-next": "^1.0.0",
     "marked": "^17.0.5",
     "pinia": "^3.0.4",

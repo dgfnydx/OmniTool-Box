@@ -46,6 +46,14 @@ export const tools: ToolMetadata[] = [
     component: () => import('../tools/developer/TimestampConverter.vue')
   },
   {
+    id: 'token-counter',
+    name: 'Token Counter',
+    category: 'developer',
+    icon: markRaw(CodeXml),
+    description: 'Count GPT-3.5/GPT-4 tokens accurately.',
+    component: () => import('../tools/developer/TokenCounter.vue')
+  },
+  {
     id: 'password-generator',
     name: 'Password Generator',
     category: 'daily',
