@@ -12,7 +12,9 @@ const error = ref('');
 const encodeBase64 = () => {
   try {
     error.value = '';
-    output.value = btoa(input.value);
+    const bytes = new TextEncoder().encode(input.value);
+    const binString = Array.from(bytes, (byte) => String.fromCharCode(byte)).join("");
+    output.value = btoa(binString);
   } catch (e: any) {
     error.value = t('tools.base64-converter.encodeError') + ': ' + e.message;
   }
@@ -21,7 +23,9 @@ const encodeBase64 = () => {
 const decodeBase64 = () => {
   try {
     error.value = '';
-    output.value = atob(input.value);
+    const binString = atob(input.value);
+    const bytes = Uint8Array.from(binString, (m) => m.codePointAt(0)!);
+    output.value = new TextDecoder().decode(bytes);
   } catch (e: any) {
     error.value = t('tools.base64-converter.decodeError') + ': ' + e.message;
   }
