@@ -14,7 +14,7 @@ const encodeBase64 = () => {
     error.value = '';
     output.value = btoa(input.value);
   } catch (e: any) {
-    error.value = 'Encoding error: ' + e.message;
+    error.value = t('tools.base64-converter.encodeError') + ': ' + e.message;
   }
 };
 
@@ -23,7 +23,7 @@ const decodeBase64 = () => {
     error.value = '';
     output.value = atob(input.value);
   } catch (e: any) {
-    error.value = 'Decoding error: ' + e.message;
+    error.value = t('tools.base64-converter.decodeError') + ': ' + e.message;
   }
 };
 

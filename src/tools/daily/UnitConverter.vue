@@ -108,13 +108,13 @@ watch([fromValue, fromUnit, toUnit], updateToValue, { immediate: true });
           <label>{{ t('tools.unit-converter.from') }}</label>
           <select v-model="fromUnit">
             <template v-if="selectedCategory === 'temperature'">
-              <option value="celsius">Celsius (°C)</option>
-              <option value="fahrenheit">Fahrenheit (°F)</option>
-              <option value="kelvin">Kelvin (K)</option>
+              <option value="celsius">{{ t('tools.unit-converter.units.celsius') }}</option>
+              <option value="fahrenheit">{{ t('tools.unit-converter.units.fahrenheit') }}</option>
+              <option value="kelvin">{{ t('tools.unit-converter.units.kelvin') }}</option>
             </template>
             <template v-else>
               <option v-for="(_, unit) in categories[selectedCategory]" :key="unit" :value="unit">
-                {{ unit.charAt(0).toUpperCase() + unit.slice(1) }}
+                {{ t(`tools.unit-converter.units.${unit}`) }}
               </option>
             </template>
           </select>
@@ -129,13 +129,13 @@ watch([fromValue, fromUnit, toUnit], updateToValue, { immediate: true });
           <label>{{ t('tools.unit-converter.to') }}</label>
           <select v-model="toUnit">
             <template v-if="selectedCategory === 'temperature'">
-              <option value="celsius">Celsius (°C)</option>
-              <option value="fahrenheit">Fahrenheit (°F)</option>
-              <option value="kelvin">Kelvin (K)</option>
+              <option value="celsius">{{ t('tools.unit-converter.units.celsius') }}</option>
+              <option value="fahrenheit">{{ t('tools.unit-converter.units.fahrenheit') }}</option>
+              <option value="kelvin">{{ t('tools.unit-converter.units.kelvin') }}</option>
             </template>
             <template v-else>
               <option v-for="(_, unit) in categories[selectedCategory]" :key="unit" :value="unit">
-                {{ unit.charAt(0).toUpperCase() + unit.slice(1) }}
+                {{ t(`tools.unit-converter.units.${unit}`) }}
               </option>
             </template>
           </select>

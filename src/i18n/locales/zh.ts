@@ -40,7 +40,9 @@ export default {
       encode: '编码',
       decode: '解码',
       inputPlaceholder: '输入普通文本或 Base64 字符串...',
-      outputPlaceholder: '结果将在此显示...'
+      outputPlaceholder: '结果将在此显示...',
+      encodeError: '编码错误',
+      decodeError: '解码错误'
     },
     'timestamp-converter': {
       name: '时间戳转换',
@@ -81,6 +83,34 @@ export default {
         area: '面积',
         time: '时间',
         digital: '数字存储'
+      },
+      units: {
+        meters: '米 (m)',
+        kilometers: '千米 (km)',
+        centimeters: '厘米 (cm)',
+        millimeters: '毫米 (mm)',
+        miles: '英里 (mi)',
+        yards: '码 (yd)',
+        feet: '英尺 (ft)',
+        inches: '英寸 (in)',
+        kilograms: '千克 (kg)',
+        grams: '克 (g)',
+        milligrams: '毫克 (mg)',
+        pounds: '磅 (lb)',
+        ounces: '盎司 (oz)',
+        bytes: '字节 (B)',
+        kilobytes: '千字节 (KB)',
+        megabytes: '兆字节 (MB)',
+        gigabytes: '吉字节 (GB)',
+        terabytes: '太字节 (TB)',
+        squareMeters: '平方米 (m²)',
+        squareKilometers: '平方千米 (km²)',
+        squareFeet: '平方英尺 (ft²)',
+        acres: '英亩 (ac)',
+        hectares: '公顷 (ha)',
+        celsius: '摄氏度 (°C)',
+        fahrenheit: '华氏度 (°F)',
+        kelvin: '开尔文 (K)'
       }
     },
     'timer': {

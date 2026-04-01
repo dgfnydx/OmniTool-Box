@@ -40,7 +40,9 @@ export default {
       encode: 'Encode',
       decode: 'Decode',
       inputPlaceholder: 'Enter text or Base64 here...',
-      outputPlaceholder: 'Result will appear here...'
+      outputPlaceholder: 'Result will appear here...',
+      encodeError: 'Encoding error',
+      decodeError: 'Decoding error'
     },
     'timestamp-converter': {
       name: 'Timestamp Converter',
@@ -81,6 +83,34 @@ export default {
         area: 'Area',
         time: 'Time',
         digital: 'Digital Storage'
+      },
+      units: {
+        meters: 'Meters (m)',
+        kilometers: 'Kilometers (km)',
+        centimeters: 'Centimeters (cm)',
+        millimeters: 'Millimeters (mm)',
+        miles: 'Miles (mi)',
+        yards: 'Yards (yd)',
+        feet: 'Feet (ft)',
+        inches: 'Inches (in)',
+        kilograms: 'Kilograms (kg)',
+        grams: 'Grams (g)',
+        milligrams: 'Milligrams (mg)',
+        pounds: 'Pounds (lb)',
+        ounces: 'Ounces (oz)',
+        bytes: 'Bytes (B)',
+        kilobytes: 'Kilobytes (KB)',
+        megabytes: 'Megabytes (MB)',
+        gigabytes: 'Gigabytes (GB)',
+        terabytes: 'Terabytes (TB)',
+        squareMeters: 'Square Meters (m²)',
+        squareKilometers: 'Square Kilometers (km²)',
+        squareFeet: 'Square Feet (ft²)',
+        acres: 'Acres (ac)',
+        hectares: 'Hectares (ha)',
+        celsius: 'Celsius (°C)',
+        fahrenheit: 'Fahrenheit (°F)',
+        kelvin: 'Kelvin (K)'
       }
     },
     'timer': {
