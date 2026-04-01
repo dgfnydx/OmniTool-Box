@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, defineAsyncComponent, shallowRef, watch } from 'vue';
+import { computed, shallowRef, watch } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { getToolById } from '../registry/toolRegistry';
 
