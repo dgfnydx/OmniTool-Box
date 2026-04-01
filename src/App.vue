@@ -43,7 +43,7 @@ import ToastContainer from './components/common/ToastContainer.vue';
   margin: 0;
   padding: 0;
 }
-...
+
 h1, h2, h3, h4 {
   color: var(--text-primary);
   font-weight: 700;

@@ -71,6 +71,12 @@ const handleToolClick = () => {
   searchQuery.value = '';
   isSearchFocused.value = false;
 };
+
+const handleBlur = () => {
+  setTimeout(() => {
+    isSearchFocused.value = false;
+  }, 200);
+};
 </script>
 
 <template>
@@ -130,7 +136,7 @@ const handleToolClick = () => {
                 :placeholder="t('common.search')" 
                 v-model="searchQuery" 
                 @focus="isSearchFocused = true"
-                @blur="setTimeout(() => isSearchFocused = false, 200)"
+                @blur="handleBlur"
               />
               <div class="k-hint">⌘ K</div>
             </div>

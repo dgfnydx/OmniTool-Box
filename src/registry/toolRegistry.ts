@@ -1,4 +1,4 @@
-import { defineAsyncComponent, markRaw, type Component } from 'vue';
+import { markRaw, type Component } from 'vue';
 import { 
   CodeXml, 
   Binary, 
