@@ -67,11 +67,34 @@ export default {
     },
     'unit-converter': {
       name: '单位换算',
-      description: '在不同的物理单位之间进行快捷转换。'
+      description: '在不同的物理单位之间进行快捷转换。',
+      input: '输入数值',
+      from: '从',
+      to: '到',
+      category: '分类',
+      result: '换算结果',
+      categories: {
+        length: '长度',
+        weight: '重量',
+        temperature: '温度',
+        volume: '体积',
+        area: '面积',
+        time: '时间',
+        digital: '数字存储'
+      }
     },
     'timer': {
       name: '计时器',
-      description: '简单好用的倒计时工具。'
+      description: '简单好用的倒计时工具。',
+      hours: '小时',
+      minutes: '分钟',
+      seconds: '秒',
+      start: '开始',
+      pause: '暂停',
+      resume: '继续',
+      reset: '重置',
+      stop: '停止',
+      timesUp: "时间到！"
     },
     'word-counter': {
       name: '字数统计',
@@ -101,7 +124,10 @@ export default {
     },
     'markdown-previewer': {
       name: 'Markdown 预览',
-      description: '实时的 Markdown 语法预览编辑。'
+      description: '实时的 Markdown 语法预览编辑。',
+      editor: 'Markdown 编辑器',
+      preview: '实时预览',
+      placeholder: '在此输入 Markdown 内容...'
     }
   }
 }

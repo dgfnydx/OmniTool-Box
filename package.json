@@ -9,8 +9,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@types/marked": "^6.0.0",
     "colord": "^2.9.3",
     "lucide-vue-next": "^1.0.0",
+    "marked": "^17.0.5",
     "pinia": "^3.0.4",
     "vue": "^3.5.30",
     "vue-i18n": "^11.3.0",

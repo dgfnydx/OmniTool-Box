@@ -67,11 +67,34 @@ export default {
     },
     'unit-converter': {
       name: 'Unit Converter',
-      description: 'Convert between different units.'
+      description: 'Convert between different units.',
+      input: 'Value to Convert',
+      from: 'From',
+      to: 'To',
+      category: 'Category',
+      result: 'Converted Result',
+      categories: {
+        length: 'Length',
+        weight: 'Weight',
+        temperature: 'Temperature',
+        volume: 'Volume',
+        area: 'Area',
+        time: 'Time',
+        digital: 'Digital Storage'
+      }
     },
     'timer': {
       name: 'Timer',
-      description: 'Simple countdown timer.'
+      description: 'Simple countdown timer.',
+      hours: 'Hours',
+      minutes: 'Minutes',
+      seconds: 'Seconds',
+      start: 'Start',
+      pause: 'Pause',
+      resume: 'Resume',
+      reset: 'Reset',
+      stop: 'Stop',
+      timesUp: "Time's up!"
     },
     'word-counter': {
       name: 'Word Counter',
@@ -101,7 +124,10 @@ export default {
     },
     'markdown-previewer': {
       name: 'Markdown Previewer',
-      description: 'Live preview for Markdown syntax.'
+      description: 'Live preview for Markdown syntax.',
+      editor: 'Markdown Editor',
+      preview: 'Live Preview',
+      placeholder: 'Type your markdown here...'
     }
   }
 }
