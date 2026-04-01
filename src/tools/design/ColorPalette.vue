@@ -25,7 +25,7 @@ const contrastRatio = computed(() => {
 const contrastLevel = computed(() => {
   if (contrastRatio.value >= 7) return { label: 'AAA', color: '#22c55e' };
   if (contrastRatio.value >= 4.5) return { label: 'AA', color: '#3b82f6' };
-  return { label: 'Fail', color: '#ef4444' };
+  return { label: t('tools.color-palette.fail'), color: '#ef4444' };
 });
 
 const updateAll = (val: string) => {
@@ -114,10 +114,10 @@ const scheme = computed(() => {
 
         <div class="accessibility-preview">
           <div class="preview-text" :style="{ backgroundColor: color, color: '#ffffff' }">
-            White Text on Color
+            {{ t('tools.color-palette.whiteText') }}
           </div>
           <div class="preview-text" :style="{ backgroundColor: color, color: '#000000' }">
-            Black Text on Color
+            {{ t('tools.color-palette.blackText') }}
           </div>
         </div>
 

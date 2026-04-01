@@ -120,7 +120,13 @@ export default {
     },
     'color-palette': {
       name: 'Color Palette',
-      description: 'Hex/RGB/HSL color converter and generator.'
+      description: 'Hex/RGB/HSL color converter and generator.',
+      random: 'Random Color',
+      analysis: 'Color Analysis',
+      wcag: 'WCAG Contrast Ratio',
+      whiteText: 'White Text on Color',
+      blackText: 'Black Text on Color',
+      fail: 'Fail'
     },
     'markdown-previewer': {
       name: 'Markdown Previewer',
