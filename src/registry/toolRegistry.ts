@@ -46,6 +46,14 @@ export const tools: ToolMetadata[] = [
     component: () => import('../tools/developer/TimestampConverter.vue')
   },
   {
+    id: 'base-converter',
+    name: 'Base Converter',
+    category: 'developer',
+    icon: markRaw(Binary),
+    description: 'Convert numbers between different bases.',
+    component: () => import('../tools/developer/BaseConverter.vue')
+  },
+  {
     id: 'token-counter',
     name: 'Token Counter',
     category: 'developer',

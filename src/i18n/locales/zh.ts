@@ -70,6 +70,16 @@ export default {
         chinese_general: '通用中国大模型 (通义千问、百川、智谱等)。使用估算规则：1 个汉字约 0.6-1.5 个 token，英文单词按 1.3 比例估算。'
       }
     },
+    'base-converter': {
+      name: '进制转换',
+      description: '在二进制、八进制、十进制、十六进制等任意进制间进行转换（2-36）。',
+      input: '输入数值',
+      fromBase: '原始进制',
+      toBase: '目标进制',
+      result: '转换结果',
+      invalidInput: '当前输入对于所选进制无效',
+      tip: '支持 2 到 36 之间的进制。对于 10 以上的进制，请使用字母 A-Z（如 A=10, F=15）。'
+    },
     'password-generator': {
       name: '随机密码生成',
       description: '创建安全且随机的高强度密码。',

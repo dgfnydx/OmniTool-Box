@@ -70,6 +70,16 @@ export default {
         chinese_general: 'General Chinese Models (Qwen, Baichuan, ChatGLM). Uses an estimated rule: 1 Chinese char ≈ 0.6-1.5 tokens.'
       }
     },
+    'base-converter': {
+      name: 'Base Converter',
+      description: 'Convert numbers between different bases (2-36).',
+      input: 'Input Value',
+      fromBase: 'From Base',
+      toBase: 'To Base',
+      result: 'Converted Result',
+      invalidInput: 'Invalid input for selected base',
+      tip: 'Supports bases from 2 to 36. For bases above 10, use letters A-Z (e.g., A=10, F=15).'
+    },
     'password-generator': {
       name: 'Password Generator',
       description: 'Create secure and random passwords.',
