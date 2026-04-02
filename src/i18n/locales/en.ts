@@ -90,7 +90,19 @@ export default {
       firstLetter: 'First Letter Only',
       toneType: 'Tone Style',
       placeholder: 'Enter Chinese characters here...',
+      outputPlaceholder: 'Pinyin will appear here...',
       copied: 'Pinyin copied!'
+    },
+    'chinese-converter': {
+      name: 'Chinese S-T Converter',
+      description: 'Convert between Simplified and Traditional Chinese.',
+      input: 'Source Text',
+      output: 'Result',
+      toTraditional: 'To Traditional',
+      toSimplified: 'To Simplified',
+      placeholder: 'Enter Chinese text here...',
+      outputPlaceholder: 'Result will appear here...',
+      copied: 'Text copied!'
     },
     'password-generator': {
       name: 'Password Generator',

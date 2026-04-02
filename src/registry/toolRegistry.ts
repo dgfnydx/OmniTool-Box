@@ -10,7 +10,8 @@ import {
   Palette, 
   FileEdit,
   Signal,
-  Languages
+  Languages,
+  Repeat
 } from 'lucide-vue-next';
 
 export interface ToolMetadata {
@@ -78,6 +79,14 @@ export const tools: ToolMetadata[] = [
     icon: markRaw(Languages),
     description: 'Convert Chinese characters to Pinyin with tone options.',
     component: () => import('../tools/daily/PinyinConverter.vue')
+  },
+  {
+    id: 'chinese-converter',
+    name: 'Chinese S-T Converter',
+    category: 'daily',
+    icon: markRaw(Repeat),
+    description: 'Convert between Simplified and Traditional Chinese.',
+    component: () => import('../tools/daily/ChineseConverter.vue')
   },
   {
     id: 'mortgage-calculator',

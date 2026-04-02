@@ -17,6 +17,7 @@
     "js-tiktoken": "^1.0.21",
     "lucide-vue-next": "^1.0.0",
     "marked": "^17.0.5",
+    "opencc-js": "^1.0.5",
     "pinia": "^3.0.4",
     "pinyin-pro": "^3.28.0",
     "prismjs": "^1.30.0",
@@ -27,6 +28,7 @@
   },
   "devDependencies": {
     "@types/node": "^24.12.0",
+    "@types/opencc-js": "^1.0.3",
     "@vitejs/plugin-vue": "^6.0.5",
     "@vue/tsconfig": "^0.9.0",
     "typescript": "~5.9.3",

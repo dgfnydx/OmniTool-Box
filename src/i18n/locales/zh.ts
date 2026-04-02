@@ -90,7 +90,19 @@ export default {
       firstLetter: '仅首字母',
       toneType: '声调样式',
       placeholder: '在此输入汉字...',
+      outputPlaceholder: '转换后的拼音将在此显示...',
       copied: '拼音已复制！'
+    },
+    'chinese-converter': {
+      name: '简繁体转换',
+      description: '简体中文与繁体中文之间的双向快速转换。',
+      input: '源文本',
+      output: '结果',
+      toTraditional: '转繁体',
+      toSimplified: '转简体',
+      placeholder: '在此输入汉字...',
+      outputPlaceholder: '转换后的文本将在此显示...',
+      copied: '已复制到剪贴板！'
     },
     'password-generator': {
       name: '随机密码生成',
