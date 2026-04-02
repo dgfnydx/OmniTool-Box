@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://omnitool.example.com/</loc><priority>1.0</priority></url>
+  <url><loc>https://omnitool.example.com/tool/json-formatter</loc><priority>0.8</priority></url>
+  <url><loc>https://omnitool.example.com/tool/base64-converter</loc><priority>0.8</priority></url>
+  <url><loc>https://omnitool.example.com/tool/timestamp-converter</loc><priority>0.8</priority></url>
+  <url><loc>https://omnitool.example.com/tool/base-converter</loc><priority>0.8</priority></url>
+  <url><loc>https://omnitool.example.com/tool/token-counter</loc><priority>0.8</priority></url>
+  <url><loc>https://omnitool.example.com/tool/password-generator</loc><priority>0.7</priority></url>
+  <url><loc>https://omnitool.example.com/tool/unit-converter</loc><priority>0.7</priority></url>
+  <url><loc>https://omnitool.example.com/tool/timer</loc><priority>0.7</priority></url>
+  <url><loc>https://omnitool.example.com/tool/word-counter</loc><priority>0.7</priority></url>
+  <url><loc>https://omnitool.example.com/tool/color-palette</loc><priority>0.7</priority></url>
+  <url><loc>https://omnitool.example.com/tool/markdown-previewer</loc><priority>0.7</priority></url>
+</urlset>
