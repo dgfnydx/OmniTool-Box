@@ -14,7 +14,8 @@ import {
   Repeat,
   Banknote,
   Image,
-  CalendarHeart
+  CalendarHeart,
+  Baby
 } from 'lucide-vue-next';
 
 export interface ToolMetadata {
@@ -82,6 +83,14 @@ export const tools: ToolMetadata[] = [
     icon: markRaw(CalendarHeart),
     description: 'Predict menstrual cycle and safe periods.',
     component: () => import('../tools/daily/SafePeriodCalculator.vue')
+  },
+  {
+    id: 'due-date-calculator',
+    name: 'Due Date Calculator',
+    category: 'daily',
+    icon: markRaw(Baby),
+    description: 'Calculate delivery date and track progress.',
+    component: () => import('../tools/daily/DueDateCalculator.vue')
   },
   {
     id: 'amount-to-uppercase',

@@ -80,6 +80,21 @@ export default {
       invalidInput: 'Invalid input for selected base',
       tip: 'Supports bases from 2 to 36. For bases above 10, use letters A-Z (e.g., A=10, F=15).'
     },
+    'due-date-calculator': {
+      name: 'Due Date Calculator',
+      description: 'Calculate your expected delivery date and track pregnancy progress.',
+      lastPeriod: 'Last Menstrual Period Start',
+      calculate: 'Calculate',
+      result: 'Calculation Results',
+      edd: 'Expected Due Date',
+      gestationalAge: 'Gestational Age',
+      weeks: 'weeks',
+      days: 'days',
+      remaining: 'Days Remaining',
+      progress: 'Pregnancy Progress',
+      placeholder: 'Select date...',
+      tip: 'Note: Pregnancy usually lasts about 280 days (40 weeks). This result is for reference only.'
+    },
     'safe-period-calculator': {
       name: 'Safe Period Calculator',
       description: 'Predict menstrual cycle, fertile window and safe periods.',

@@ -80,6 +80,21 @@ export default {
       invalidInput: '当前输入对于所选进制无效',
       tip: '支持 2 到 36 之间的进制。对于 10 以上的进制，请使用字母 A-Z（如 A=10, F=15）。'
     },
+    'due-date-calculator': {
+      name: '预产期计算器',
+      description: '根据末次月经日期计算预产期，并追踪怀孕进度。',
+      lastPeriod: '末次月经开始日期',
+      calculate: '计算',
+      result: '计算结果',
+      edd: '预产期',
+      gestationalAge: '当前孕周',
+      weeks: '周',
+      days: '天',
+      remaining: '距离预产期还有',
+      progress: '怀孕进度',
+      placeholder: '选择日期...',
+      tip: '提示：预产期通常为末次月经开始后的 280 天（40 周）。计算结果仅供参考，请以医生诊断为准。'
+    },
     'safe-period-calculator': {
       name: '安全期计算器',
       description: '预测月经周期、排卵期及安全期，辅助健康管理。',
