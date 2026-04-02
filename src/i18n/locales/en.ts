@@ -278,6 +278,25 @@ export default {
       outputPlaceholder: 'Result will appear here...',
       invalidMorse: 'Invalid Morse code detected'
     },
+    'photo-exif': {
+      name: 'Photo EXIF Extractor',
+      description: 'Extract and view EXIF metadata from image files.',
+      upload: 'Upload Photo',
+      uploadPlaceholder: 'Click or drag photo here to extract EXIF',
+      basicInfo: 'Basic Info',
+      exifInfo: 'EXIF Metadata',
+      gpsInfo: 'GPS Location',
+      filename: 'Filename',
+      filesize: 'File Size',
+      cameraModel: 'Camera Model',
+      exposure: 'Exposure Time',
+      iso: 'ISO Speed',
+      focalLength: 'Focal Length',
+      dateTime: 'Date Taken',
+      latitude: 'Latitude',
+      longitude: 'Longitude',
+      noExif: 'No EXIF data found in this image.'
+    },
     'qr-generator': {
       name: 'QR Code Generator',
       description: 'Generate high-quality QR codes for text, URLs, and more.',

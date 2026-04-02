@@ -12,7 +12,8 @@ import {
   Signal,
   Languages,
   Repeat,
-  Banknote
+  Banknote,
+  Image
 } from 'lucide-vue-next';
 
 export interface ToolMetadata {
@@ -136,6 +137,14 @@ export const tools: ToolMetadata[] = [
     icon: markRaw(Timer),
     description: 'Simple countdown timer.',
     component: () => import('../tools/daily/Timer.vue')
+  },
+  {
+    id: 'photo-exif',
+    name: 'Photo EXIF Extractor',
+    category: 'design',
+    icon: markRaw(Image),
+    description: 'Extract and view EXIF metadata from image files.',
+    component: () => import('../tools/design/PhotoExifExtractor.vue')
   },
   {
     id: 'qr-generator',
