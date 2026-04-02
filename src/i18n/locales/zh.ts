@@ -80,6 +80,18 @@ export default {
       invalidInput: '当前输入对于所选进制无效',
       tip: '支持 2 到 36 之间的进制。对于 10 以上的进制，请使用字母 A-Z（如 A=10, F=15）。'
     },
+    'pinyin-converter': {
+      name: '汉字转拼音',
+      description: '将汉字转换为拼音，支持多种声调模式。',
+      input: '汉字文本',
+      output: '拼音结果',
+      tone: '带声调',
+      noTone: '不带声调',
+      firstLetter: '仅首字母',
+      toneType: '声调样式',
+      placeholder: '在此输入汉字...',
+      copied: '拼音已复制！'
+    },
     'password-generator': {
       name: '随机密码生成',
       description: '创建安全且随机的高强度密码。',

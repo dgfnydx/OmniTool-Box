@@ -80,6 +80,18 @@ export default {
       invalidInput: 'Invalid input for selected base',
       tip: 'Supports bases from 2 to 36. For bases above 10, use letters A-Z (e.g., A=10, F=15).'
     },
+    'pinyin-converter': {
+      name: 'Chinese Pinyin Converter',
+      description: 'Convert Chinese characters to Pinyin with tone options.',
+      input: 'Chinese Text',
+      output: 'Pinyin Result',
+      tone: 'With Tones',
+      noTone: 'No Tones',
+      firstLetter: 'First Letter Only',
+      toneType: 'Tone Style',
+      placeholder: 'Enter Chinese characters here...',
+      copied: 'Pinyin copied!'
+    },
     'password-generator': {
       name: 'Password Generator',
       description: 'Create secure and random passwords.',

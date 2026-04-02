@@ -9,7 +9,8 @@ import {
   Type, 
   Palette, 
   FileEdit,
-  Signal
+  Signal,
+  Languages
 } from 'lucide-vue-next';
 
 export interface ToolMetadata {
@@ -69,6 +70,14 @@ export const tools: ToolMetadata[] = [
     icon: markRaw(CodeXml),
     description: 'Count GPT-3.5/GPT-4 tokens accurately.',
     component: () => import('../tools/developer/TokenCounter.vue')
+  },
+  {
+    id: 'pinyin-converter',
+    name: 'Chinese Pinyin Converter',
+    category: 'daily',
+    icon: markRaw(Languages),
+    description: 'Convert Chinese characters to Pinyin with tone options.',
+    component: () => import('../tools/daily/PinyinConverter.vue')
   },
   {
     id: 'mortgage-calculator',
