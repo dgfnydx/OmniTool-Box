@@ -14,7 +14,6 @@ const errorLevel = ref<'L' | 'M' | 'Q' | 'H'>('H'); // Default to H for logo sup
 const logoUrl = ref<string | null>(null);
 const logoSizePercent = ref(20); // 20% of QR size
 const qrDataUrl = ref('');
-const canvasRef = ref<HTMLCanvasElement | null>(null);
 
 const handleFileUpload = (event: Event) => {
   const file = (event.target as HTMLInputElement).files?.[0];

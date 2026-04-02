@@ -62,6 +62,14 @@ export const tools: ToolMetadata[] = [
     component: () => import('../tools/developer/TokenCounter.vue')
   },
   {
+    id: 'mortgage-calculator',
+    name: 'Mortgage Calculator',
+    category: 'daily',
+    icon: markRaw(Clock),
+    description: 'Calculate monthly payments and total interest.',
+    component: () => import('../tools/daily/MortgageCalculator.vue')
+  },
+  {
     id: 'password-generator',
     name: 'Password Generator',
     category: 'daily',
