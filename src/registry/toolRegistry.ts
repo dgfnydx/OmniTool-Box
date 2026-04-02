@@ -13,7 +13,8 @@ import {
   Languages,
   Repeat,
   Banknote,
-  Image
+  Image,
+  CalendarHeart
 } from 'lucide-vue-next';
 
 export interface ToolMetadata {
@@ -73,6 +74,14 @@ export const tools: ToolMetadata[] = [
     icon: markRaw(CodeXml),
     description: 'Count GPT-3.5/GPT-4 tokens accurately.',
     component: () => import('../tools/developer/TokenCounter.vue')
+  },
+  {
+    id: 'safe-period-calculator',
+    name: 'Safe Period Calculator',
+    category: 'daily',
+    icon: markRaw(CalendarHeart),
+    description: 'Predict menstrual cycle and safe periods.',
+    component: () => import('../tools/daily/SafePeriodCalculator.vue')
   },
   {
     id: 'amount-to-uppercase',

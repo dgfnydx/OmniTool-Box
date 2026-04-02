@@ -80,6 +80,21 @@ export default {
       invalidInput: 'Invalid input for selected base',
       tip: 'Supports bases from 2 to 36. For bases above 10, use letters A-Z (e.g., A=10, F=15).'
     },
+    'safe-period-calculator': {
+      name: 'Safe Period Calculator',
+      description: 'Predict menstrual cycle, fertile window and safe periods.',
+      lastPeriod: 'Last Period Start Date',
+      cycleLength: 'Average Cycle Length (days)',
+      periodLength: 'Period Duration (days)',
+      calculate: 'Calculate',
+      result: 'Calculation Results',
+      nextPeriod: 'Next Period Start',
+      ovulationDay: 'Ovulation Day',
+      fertileWindow: 'Fertile Window (High Chance)',
+      safeWindow: 'Safe Period',
+      days: 'days',
+      tip: 'Note: This tool is for reference only and cannot be used as a reliable contraceptive method.'
+    },
     'amount-to-uppercase': {
       name: 'Amount to Uppercase',
       description: 'Convert numbers to Chinese financial uppercase format.',

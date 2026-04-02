@@ -80,6 +80,21 @@ export default {
       invalidInput: '当前输入对于所选进制无效',
       tip: '支持 2 到 36 之间的进制。对于 10 以上的进制，请使用字母 A-Z（如 A=10, F=15）。'
     },
+    'safe-period-calculator': {
+      name: '安全期计算器',
+      description: '预测月经周期、排卵期及安全期，辅助健康管理。',
+      lastPeriod: '末次月经开始日期',
+      cycleLength: '平均月经周期（天）',
+      periodLength: '月经持续时间（天）',
+      calculate: '计算预测',
+      result: '预测结果',
+      nextPeriod: '下次月经开始',
+      ovulationDay: '排卵日',
+      fertileWindow: '排卵期 (易孕期)',
+      safeWindow: '安全期',
+      days: '天',
+      tip: '提示：本工具仅供参考，由于排卵受情绪、环境等因素影响，不能作为可靠的避孕手段。'
+    },
     'amount-to-uppercase': {
       name: '数字转大写金额',
       description: '将阿拉伯数字转换为中文金融大写格式。',
