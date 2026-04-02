@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, watch, computed } from 'vue';
+import { ref, watch } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useToastStore } from '../../store/toast';
 import { ArrowRightLeft, Copy, Trash2 } from 'lucide-vue-next';

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed, watch } from 'vue';
+import { ref, computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { getEncoding } from 'js-tiktoken';
 import { useToastStore } from '../../store/toast';
