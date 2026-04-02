@@ -94,6 +94,14 @@ export const tools: ToolMetadata[] = [
     component: () => import('../tools/daily/Timer.vue')
   },
   {
+    id: 'qr-generator',
+    name: 'QR Code Generator',
+    category: 'design',
+    icon: markRaw(Palette),
+    description: 'Generate customizable QR codes.',
+    component: () => import('../tools/design/QRCodeGenerator.vue')
+  },
+  {
     id: 'word-counter',
     name: 'Word Counter',
     category: 'design',

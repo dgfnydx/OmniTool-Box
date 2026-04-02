@@ -204,6 +204,20 @@ export default {
       editor: 'Markdown Editor',
       preview: 'Live Preview',
       placeholder: 'Type your markdown here...'
+    },
+    'qr-generator': {
+      name: 'QR Code Generator',
+      description: 'Generate high-quality QR codes for text, URLs, and more.',
+      content: 'QR Content',
+      size: 'Size',
+      fgColor: 'Foreground Color',
+      bgColor: 'Background Color',
+      errorCorrection: 'Error Correction',
+      download: 'Download PNG',
+      placeholder: 'Enter text or URL here...',
+      uploadLogo: 'Upload Logo',
+      logoSize: 'Logo Size',
+      clearLogo: 'Remove Logo'
     }
   }
 }
