@@ -8,7 +8,8 @@ import {
   Timer, 
   Type, 
   Palette, 
-  FileEdit 
+  FileEdit,
+  Signal
 } from 'lucide-vue-next';
 
 export interface ToolMetadata {
@@ -52,6 +53,14 @@ export const tools: ToolMetadata[] = [
     icon: markRaw(Binary),
     description: 'Convert numbers between different bases.',
     component: () => import('../tools/developer/BaseConverter.vue')
+  },
+  {
+    id: 'morse-converter',
+    name: 'Morse Code Converter',
+    category: 'developer',
+    icon: markRaw(Signal),
+    description: 'Convert text to Morse code and vice versa.',
+    component: () => import('../tools/developer/MorseCodeConverter.vue')
   },
   {
     id: 'token-counter',

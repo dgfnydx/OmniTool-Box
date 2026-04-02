@@ -233,6 +233,17 @@ export default {
       preview: 'Live Preview',
       placeholder: 'Type your markdown here...'
     },
+    'morse-converter': {
+      name: 'Morse Code Converter',
+      description: 'Convert text to Morse code and vice versa.',
+      input: 'Source Text',
+      output: 'Result',
+      toMorse: 'To Morse',
+      fromMorse: 'From Morse',
+      inputPlaceholder: 'Enter text or Morse code (use . and -)...',
+      outputPlaceholder: 'Result will appear here...',
+      invalidMorse: 'Invalid Morse code detected'
+    },
     'qr-generator': {
       name: 'QR Code Generator',
       description: 'Generate high-quality QR codes for text, URLs, and more.',
