@@ -80,6 +80,16 @@ export default {
       invalidInput: 'Invalid input for selected base',
       tip: 'Supports bases from 2 to 36. For bases above 10, use letters A-Z (e.g., A=10, F=15).'
     },
+    'amount-to-uppercase': {
+      name: 'Amount to Uppercase',
+      description: 'Convert numbers to Chinese financial uppercase format.',
+      input: 'Number Amount',
+      output: 'Uppercase Amount',
+      placeholder: 'Enter amount (e.g., 123.45)...',
+      outputPlaceholder: 'Uppercase result will appear here...',
+      invalidAmount: 'Invalid amount format',
+      copied: 'Result copied!'
+    },
     'pinyin-converter': {
       name: 'Chinese Pinyin Converter',
       description: 'Convert Chinese characters to Pinyin with tone options.',

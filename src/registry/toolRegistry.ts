@@ -11,7 +11,8 @@ import {
   FileEdit,
   Signal,
   Languages,
-  Repeat
+  Repeat,
+  Banknote
 } from 'lucide-vue-next';
 
 export interface ToolMetadata {
@@ -71,6 +72,14 @@ export const tools: ToolMetadata[] = [
     icon: markRaw(CodeXml),
     description: 'Count GPT-3.5/GPT-4 tokens accurately.',
     component: () => import('../tools/developer/TokenCounter.vue')
+  },
+  {
+    id: 'amount-to-uppercase',
+    name: 'Amount to Uppercase',
+    category: 'daily',
+    icon: markRaw(Banknote),
+    description: 'Convert numbers to Chinese financial uppercase format.',
+    component: () => import('../tools/daily/AmountToUppercase.vue')
   },
   {
     id: 'pinyin-converter',

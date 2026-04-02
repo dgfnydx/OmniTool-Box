@@ -80,6 +80,16 @@ export default {
       invalidInput: '当前输入对于所选进制无效',
       tip: '支持 2 到 36 之间的进制。对于 10 以上的进制，请使用字母 A-Z（如 A=10, F=15）。'
     },
+    'amount-to-uppercase': {
+      name: '数字转大写金额',
+      description: '将阿拉伯数字转换为中文金融大写格式。',
+      input: '数字金额',
+      output: '大写结果',
+      placeholder: '输入数字金额 (如 123.45)...',
+      outputPlaceholder: '大写结果将在此显示...',
+      invalidAmount: '无效的金额格式',
+      copied: '已复制到剪贴板！'
+    },
     'pinyin-converter': {
       name: '汉字转拼音',
       description: '将汉字转换为拼音，支持多种声调模式。',
