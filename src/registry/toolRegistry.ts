@@ -78,6 +78,14 @@ export const tools: ToolMetadata[] = [
     component: () => import('../tools/daily/UnitConverter.vue')
   },
   {
+    id: 'roi-calculator',
+    name: 'ROI Calculator',
+    category: 'daily',
+    icon: markRaw(Scale),
+    description: 'Calculate Return on Investment and annualized ROI.',
+    component: () => import('../tools/daily/ROICalculator.vue')
+  },
+  {
     id: 'timer',
     name: 'Timer',
     category: 'daily',

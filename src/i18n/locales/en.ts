@@ -151,6 +151,21 @@ export default {
       stop: 'Stop',
       timesUp: "Time's up!"
     },
+    'roi-calculator': {
+      name: 'ROI Calculator',
+      description: 'Calculate Return on Investment and annualized ROI.',
+      invested: 'Invested Amount',
+      returned: 'Returned Amount',
+      period: 'Investment Period',
+      days: 'Days',
+      months: 'Months',
+      years: 'Years',
+      profit: 'Total Profit',
+      roi: 'ROI',
+      annualized: 'Annualized ROI',
+      loss: 'Total Loss',
+      tip: 'ROI = (Net Profit / Cost of Investment) × 100%. Annualized ROI accounts for the length of the investment, giving a better picture of performance over time.'
+    },
     'word-counter': {
       name: 'Word Counter',
       description: 'Count words, characters, and sentences.',
