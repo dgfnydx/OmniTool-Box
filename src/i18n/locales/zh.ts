@@ -80,6 +80,40 @@ export default {
       invalidInput: '当前输入对于所选进制无效',
       tip: '支持 2 到 36 之间的进制。对于 10 以上的进制，请使用字母 A-Z（如 A=10, F=15）。'
     },
+    'bmi-calculator': {
+      name: 'BMI 体质指数',
+      description: '计算身体质量指数 (BMI)，评估体重健康状况。',
+      weight: '体重 (kg)',
+      height: '身高 (cm)',
+      calculate: '计算 BMI',
+      result: '您的 BMI 指数',
+      category: '体重状态',
+      underweight: '偏瘦',
+      normal: '正常',
+      overweight: '超重',
+      obese: '肥胖',
+      tip: 'BMI 是通过身高和体重来衡量身体胖瘦程度及是否健康的一个常用指标。'
+    },
+    'bmr-calculator': {
+      name: 'BMR 基础代谢率',
+      description: '使用 Mifflin-St Jeor 公式计算您在静息状态下消耗的热量。',
+      gender: '性别',
+      male: '男',
+      female: '女',
+      age: '年龄',
+      weight: '体重 (kg)',
+      height: '身高 (cm)',
+      result: '您的 BMR',
+      calories: '千卡/天',
+      activity: {
+        sedentary: '久坐不动（几乎不运动）',
+        light: '轻度活跃（每周运动 1-3 次）',
+        moderate: '中度活跃（每周运动 3-5 次）',
+        active: '高度活跃（每周运动 6-7 次）',
+        extra: '极度活跃（高强度运动及体力劳动）'
+      },
+      tip: '基础代谢率 (BMR) 是指人体在清醒而又极端安静的状态下，不受肌肉活动、环境温度、食物及精神紧张等影响时的能量代谢率。'
+    },
     'due-date-calculator': {
       name: '预产期计算器',
       description: '根据末次月经日期计算预产期，并追踪怀孕进度。',

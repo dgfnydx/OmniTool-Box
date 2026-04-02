@@ -15,7 +15,9 @@ import {
   Banknote,
   Image,
   CalendarHeart,
-  Baby
+  Baby,
+  Accessibility,
+  Flame
 } from 'lucide-vue-next';
 
 export interface ToolMetadata {
@@ -75,6 +77,22 @@ export const tools: ToolMetadata[] = [
     icon: markRaw(CodeXml),
     description: 'Count GPT-3.5/GPT-4 tokens accurately.',
     component: () => import('../tools/developer/TokenCounter.vue')
+  },
+  {
+    id: 'bmi-calculator',
+    name: 'BMI Calculator',
+    category: 'daily',
+    icon: markRaw(Accessibility),
+    description: 'Calculate Body Mass Index.',
+    component: () => import('../tools/daily/BMICalculator.vue')
+  },
+  {
+    id: 'bmr-calculator',
+    name: 'BMR Calculator',
+    category: 'daily',
+    icon: markRaw(Flame),
+    description: 'Calculate Basal Metabolic Rate.',
+    component: () => import('../tools/daily/BMRCalculator.vue')
   },
   {
     id: 'safe-period-calculator',

@@ -80,6 +80,40 @@ export default {
       invalidInput: 'Invalid input for selected base',
       tip: 'Supports bases from 2 to 36. For bases above 10, use letters A-Z (e.g., A=10, F=15).'
     },
+    'bmi-calculator': {
+      name: 'BMI Calculator',
+      description: 'Calculate Body Mass Index and check your weight status.',
+      weight: 'Weight (kg)',
+      height: 'Height (cm)',
+      calculate: 'Calculate BMI',
+      result: 'Your BMI',
+      category: 'Category',
+      underweight: 'Underweight',
+      normal: 'Normal weight',
+      overweight: 'Overweight',
+      obese: 'Obese',
+      tip: 'BMI is a simple index of weight-for-height that is commonly used to classify underweight, overweight and obesity in adults.'
+    },
+    'bmr-calculator': {
+      name: 'BMR Calculator',
+      description: 'Calculate your Basal Metabolic Rate using Mifflin-St Jeor Equation.',
+      gender: 'Gender',
+      male: 'Male',
+      female: 'Female',
+      age: 'Age',
+      weight: 'Weight (kg)',
+      height: 'Height (cm)',
+      result: 'Your BMR',
+      calories: 'Calories/Day',
+      activity: {
+        sedentary: 'Sedentary (little or no exercise)',
+        light: 'Lightly active (exercise 1-3 days/week)',
+        moderate: 'Moderately active (exercise 3-5 days/week)',
+        active: 'Very active (hard exercise 6-7 days/week)',
+        extra: 'Extra active (very hard exercise & physical job)'
+      },
+      tip: 'BMR is the amount of energy expanded while at rest in a neutrally temperate environment.'
+    },
     'due-date-calculator': {
       name: 'Due Date Calculator',
       description: 'Calculate your expected delivery date and track pregnancy progress.',
