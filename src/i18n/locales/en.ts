@@ -80,6 +80,27 @@ export default {
       invalidInput: 'Invalid input for selected base',
       tip: 'Supports bases from 2 to 36. For bases above 10, use letters A-Z (e.g., A=10, F=15).'
     },
+    'doc-comparator': {
+      name: 'Document Comparator',
+      description: 'Compare two documents and highlight differences.',
+      original: 'Original Text',
+      modified: 'Modified Text',
+      diffResult: 'Comparison Result',
+      placeholder1: 'Paste the original text here...',
+      placeholder2: 'Paste the modified text here...',
+      mode: 'Comparison Mode',
+      modeChars: 'Characters',
+      modeWords: 'Words',
+      modeLines: 'Lines',
+      viewMode: 'View Mode',
+      viewSplit: 'Split',
+      viewUnified: 'Unified',
+      legend: {
+        added: 'Added',
+        removed: 'Removed',
+        unchanged: 'Unchanged'
+      }
+    },
     'bmi-calculator': {
       name: 'BMI Calculator',
       description: 'Calculate Body Mass Index and check your weight status.',

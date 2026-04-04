@@ -17,7 +17,8 @@ import {
   CalendarHeart,
   Baby,
   Accessibility,
-  Flame
+  Flame,
+  FileText
 } from 'lucide-vue-next';
 
 export interface ToolMetadata {
@@ -77,6 +78,14 @@ export const tools: ToolMetadata[] = [
     icon: markRaw(CodeXml),
     description: 'Count GPT-3.5/GPT-4 tokens accurately.',
     component: () => import('../tools/developer/TokenCounter.vue')
+  },
+  {
+    id: 'doc-comparator',
+    name: 'Document Comparator',
+    category: 'developer',
+    icon: markRaw(FileText),
+    description: 'Compare two documents and highlight differences.',
+    component: () => import('../tools/developer/DocComparator.vue')
   },
   {
     id: 'bmi-calculator',

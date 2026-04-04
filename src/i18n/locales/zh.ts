@@ -80,6 +80,27 @@ export default {
       invalidInput: '当前输入对于所选进制无效',
       tip: '支持 2 到 36 之间的进制。对于 10 以上的进制，请使用字母 A-Z（如 A=10, F=15）。'
     },
+    'doc-comparator': {
+      name: '文本对比工具',
+      description: '比对两个文档并高亮显示其中的差异。',
+      original: '原始文本',
+      modified: '修改后文本',
+      diffResult: '比对结果',
+      placeholder1: '在此粘贴原始文本...',
+      placeholder2: '在此粘贴修改后的文本...',
+      mode: '比对模式',
+      modeChars: '字符级',
+      modeWords: '单词级',
+      modeLines: '行级',
+      viewMode: '显示模式',
+      viewSplit: '分屏',
+      viewUnified: '统一',
+      legend: {
+        added: '新增',
+        removed: '删除',
+        unchanged: '未变'
+      }
+    },
     'bmi-calculator': {
       name: 'BMI 体质指数',
       description: '计算身体质量指数 (BMI)，评估体重健康状况。',
