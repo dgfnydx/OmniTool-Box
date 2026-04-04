@@ -335,6 +335,22 @@ export default {
         readingTime: 'Estimated based on an average reading speed of 200 words per minute.'
       }
     },
+    'font-viewer': {
+      name: 'Font Viewer',
+      description: 'Preview system and local fonts with custom text.',
+      previewText: 'Preview Text',
+      fontSize: 'Font Size',
+      lineHeight: 'Line Height',
+      letterSpacing: 'Letter Spacing',
+      fontWeight: 'Font Weight',
+      fontStyle: 'Font Style',
+      upload: 'Upload Font',
+      uploadTip: 'Click or drag TTF/OTF/WOFF files here',
+      systemFonts: 'System Fonts',
+      localFonts: 'Uploaded Fonts',
+      reset: 'Reset Text',
+      fontInfo: 'Font Info'
+    },
     'color-palette': {
       name: 'Color Palette',
       description: 'Hex/RGB/HSL color converter and generator.',

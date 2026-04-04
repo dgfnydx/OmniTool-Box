@@ -18,7 +18,8 @@ import {
   Baby,
   Accessibility,
   Flame,
-  FileText
+  FileText,
+  Baseline
 } from 'lucide-vue-next';
 
 export interface ToolMetadata {
@@ -206,6 +207,14 @@ export const tools: ToolMetadata[] = [
     icon: markRaw(Type),
     description: 'Count words, characters, and sentences.',
     component: () => import('../tools/design/WordCounter.vue')
+  },
+  {
+    id: 'font-viewer',
+    name: 'Font Viewer',
+    category: 'design',
+    icon: markRaw(Baseline),
+    description: 'Preview system and local fonts.',
+    component: () => import('../tools/design/FontViewer.vue')
   },
   {
     id: 'color-palette',
