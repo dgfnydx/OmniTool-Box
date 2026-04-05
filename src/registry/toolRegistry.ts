@@ -19,7 +19,8 @@ import {
   Accessibility,
   Flame,
   FileText,
-  Baseline
+  Baseline,
+  FileImage
 } from 'lucide-vue-next';
 
 export interface ToolMetadata {
@@ -215,6 +216,14 @@ export const tools: ToolMetadata[] = [
     icon: markRaw(Baseline),
     description: 'Preview system and local fonts.',
     component: () => import('../tools/design/FontViewer.vue')
+  },
+  {
+    id: 'image-compressor',
+    name: 'Image Compressor',
+    category: 'design',
+    icon: markRaw(FileImage),
+    description: 'Compress and resize images easily.',
+    component: () => import('../tools/design/ImageCompressor.vue')
   },
   {
     id: 'color-palette',
