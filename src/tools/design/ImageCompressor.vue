@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, watch, onUnmounted } from 'vue';
 import { useI18n } from 'vue-i18n';
-import { Upload, Download, Image as ImageIcon, ArrowRight, Trash2 } from 'lucide-vue-next';
+import { Upload, Download, ArrowRight, Trash2 } from 'lucide-vue-next';
 import { useToastStore } from '../../store/toast';
 
 const { t } = useI18n();

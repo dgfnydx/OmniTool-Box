@@ -20,7 +20,8 @@ import {
   Flame,
   FileText,
   Baseline,
-  FileImage
+  FileImage,
+  BarChart3
 } from 'lucide-vue-next';
 
 export interface ToolMetadata {
@@ -208,6 +209,14 @@ export const tools: ToolMetadata[] = [
     icon: markRaw(Type),
     description: 'Count words, characters, and sentences.',
     component: () => import('../tools/design/WordCounter.vue')
+  },
+  {
+    id: 'word-frequency',
+    name: 'Word Frequency',
+    category: 'design',
+    icon: markRaw(BarChart3),
+    description: 'Analyze word frequency in text.',
+    component: () => import('../tools/design/WordFrequency.vue')
   },
   {
     id: 'font-viewer',
