@@ -439,6 +439,44 @@ export default {
       uploadLogo: '上传 Logo',
       logoSize: 'Logo 比例',
       clearLogo: '移除 Logo'
+    },
+    'solar-terms': {
+      name: '二十四节气',
+      description: '查询全年的二十四节气具体时间及当前节气状态。',
+      year: '年',
+      prevYear: '上一年',
+      nextYear: '下一年',
+      date: '日期',
+      time: '精确时间',
+      current: '当前节气',
+      next: '即将到来',
+      tips: '二十四节气是根据太阳在黄道上的位置划分的，反映了气候变化和物候现象，是指导农事活动的历法补充。',
+      terms: {
+        LI_CHUN: '立春',
+        YU_SHUI: '雨水',
+        JING_ZHE: '惊蛰',
+        CHUN_FEN: '春分',
+        QING_MING: '清明',
+        GU_YU: '谷雨',
+        LI_XIA: '立夏',
+        XIAO_MAN: '小满',
+        MANG_ZHONG: '芒种',
+        XIA_ZHI: '夏至',
+        XIAO_SHU: '小暑',
+        DA_SHU: '大暑',
+        LI_QIU: '立秋',
+        CHU_SHU: '处暑',
+        BAI_LU: '白露',
+        QIU_FEN: '秋分',
+        HAN_LU: '寒露',
+        SHUANG_JIANG: '霜降',
+        LI_DONG: '立冬',
+        XIAO_XUE: '小雪',
+        DA_XUE: '大雪',
+        DONG_ZHI: '冬至',
+        XIAO_HAN: '小寒',
+        DA_HAN: '大寒'
+      }
     }
   }
 }

@@ -14,6 +14,7 @@ import {
   Repeat,
   Banknote,
   Image,
+  Calendar,
   CalendarHeart,
   Baby,
   Accessibility,
@@ -89,6 +90,14 @@ export const tools: ToolMetadata[] = [
     icon: markRaw(FileText),
     description: 'Compare two documents and highlight differences.',
     component: () => import('../tools/developer/DocComparator.vue')
+  },
+  {
+    id: 'solar-terms',
+    name: 'Solar Terms',
+    category: 'daily',
+    icon: markRaw(Calendar),
+    description: 'Quick check for the 24 solar terms of the year.',
+    component: () => import('../tools/daily/SolarTerms.vue')
   },
   {
     id: 'bmi-calculator',

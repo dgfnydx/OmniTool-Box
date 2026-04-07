@@ -278,6 +278,44 @@ export default {
       download: 'Download QR Code',
       error: 'Failed to generate QR code'
     },
+    'solar-terms': {
+      name: 'Solar Terms',
+      description: 'Quick check for the 24 solar terms of the year and their precise timing.',
+      year: 'Year',
+      prevYear: 'Previous Year',
+      nextYear: 'Next Year',
+      date: 'Date',
+      time: 'Precise Time',
+      current: 'Current',
+      next: 'Coming Soon',
+      tips: 'The 24 solar terms are a system of time and calendars that originated in China and are used to guide agricultural activities based on the sun\'s position in the zodiac.',
+      terms: {
+        LI_CHUN: 'Start of Spring',
+        YU_SHUI: 'Rain Water',
+        JING_ZHE: 'Awakening of Insects',
+        CHUN_FEN: 'Spring Equinox',
+        QING_MING: 'Pure Brightness',
+        GU_YU: 'Grain Rain',
+        LI_XIA: 'Start of Summer',
+        XIAO_MAN: 'Grain Full',
+        MANG_ZHONG: 'Grain in Ear',
+        XIA_ZHI: 'Summer Solstice',
+        XIAO_SHU: 'Minor Heat',
+        DA_SHU: 'Major Heat',
+        LI_QIU: 'Start of Autumn',
+        CHU_SHU: 'End of Heat',
+        BAI_LU: 'White Dew',
+        QIU_FEN: 'Autumn Equinox',
+        HAN_LU: 'Cold Dew',
+        SHUANG_JIANG: 'Frost\'s Descent',
+        LI_DONG: 'Start of Winter',
+        XIAO_XUE: 'Minor Snow',
+        DA_XUE: 'Major Snow',
+        DONG_ZHI: 'Winter Solstice',
+        XIAO_HAN: 'Minor Cold',
+        DA_HAN: 'Major Cold'
+      }
+    },
     'password-generator': {
       name: 'Password Generator',
       description: 'Generate secure and random passwords.',
@@ -364,17 +402,6 @@ export default {
       second: 'Second Trimester',
       third: 'Third Trimester'
     },
-    'bmi-bmr-calculator': {
-      name: 'BMI & BMR Calculator',
-      description: 'Calculate BMI and BMR health metrics.',
-      gender: 'Gender',
-      male: 'Male',
-      female: 'Female',
-      age: 'Age',
-      weight: 'Weight (kg)',
-      height: 'Height (cm)',
-      activity: 'Activity Level'
-    },
     'safe-period-calculator': {
       name: 'Safe Period Calculator',
       description: 'Estimate safe, fertile, and period dates.',
@@ -394,7 +421,7 @@ export default {
       cameraInfo: 'Camera Info',
       gpsInfo: 'GPS Info'
     },
-    'morse-code': {
+    'morse-converter': {
       name: 'Morse Code',
       description: 'Encode and decode Morse code.',
       input: 'Input Text',
