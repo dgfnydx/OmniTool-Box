@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import { useI18n } from 'vue-i18n';
-import { Lunar, Solar } from 'lunar-javascript';
+import { Solar } from 'lunar-javascript';
 import { ChevronLeft, ChevronRight, Info, Calendar } from 'lucide-vue-next';
 
 const { t } = useI18n();
@@ -35,7 +35,7 @@ const solarTermsList = computed(() => {
     .map(name => {
       const sDate = combined[name];
       const ymd = sDate.toYmd();
-      const [y, m, d] = ymd.split('-').map(Number);
+      const [y] = ymd.split('-').map(Number);
       
       // 只有年份匹配当前公历年的才保留
       if (y !== year) return null;
