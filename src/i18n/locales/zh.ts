@@ -384,6 +384,20 @@ export default {
       format: '输出格式',
       keepOriginal: '保持原始格式'
     },
+    'image-cropper': {
+      name: '图片裁剪',
+      description: '自由裁剪、旋转图片，支持多种常用比例。',
+      uploadTip: '点击或拖拽图片到此处开始裁剪',
+      aspectRatio: '裁剪比例',
+      actions: '操作',
+      rotateLeft: '左旋转 90°',
+      rotateRight: '右旋转 90°',
+      reset: '重置状态',
+      download: '下载裁剪后的图片',
+      customRatio: '自定义比例',
+      width: '宽',
+      height: '高'
+    },
     'color-palette': {
       name: '调色盘',
       description: 'Hex/RGB/HSL 颜色值的转换与生成。',

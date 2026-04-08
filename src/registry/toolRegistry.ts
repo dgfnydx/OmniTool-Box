@@ -22,7 +22,8 @@ import {
   FileText,
   Baseline,
   FileImage,
-  BarChart3
+  BarChart3,
+  Crop
 } from 'lucide-vue-next';
 
 export interface ToolMetadata {
@@ -234,6 +235,14 @@ export const tools: ToolMetadata[] = [
     icon: markRaw(Baseline),
     description: 'Preview system and local fonts.',
     component: () => import('../tools/design/FontViewer.vue')
+  },
+  {
+    id: 'image-cropper',
+    name: 'Image Cropper',
+    category: 'design',
+    icon: markRaw(Crop),
+    description: 'Crop and rotate images with custom aspect ratios.',
+    component: () => import('../tools/design/ImageCropper.vue')
   },
   {
     id: 'image-compressor',
