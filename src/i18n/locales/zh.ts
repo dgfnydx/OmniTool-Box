@@ -1,4 +1,9 @@
 export default {
+  seo: {
+    title: 'OmniTool - 免费在线工具箱 | 开发者与设计者的全能助手',
+    description: 'OmniTool 是一个强大且免费的在线工具箱，包含 JSON 格式化、Base64 转换、AI Token 计算、调色盘、单位换算等多种实用工具。无需下载，即开即用。',
+    keywords: '免费在线工具, 开发者工具, 设计工具, JSON格式化, Base64转换, 时间戳转换, 词频统计, 二维码生成'
+  },
   common: {
     search: '搜索工具...',
     home: '首页',
@@ -19,8 +24,8 @@ export default {
     notFound: '未找到该工具'
   },
   home: {
-    heroTitle: 'OmniTool 全能工具箱',
-    heroSubtitle: '为您提供开发者、日常生活及设计相关的一站式工具集。'
+    heroTitle: 'OmniTool 免费在线工具箱',
+    heroSubtitle: '为您提供开发者、日常生活及设计相关的一站式全能免费在线工具集。'
   },
   tools: {
     'json-formatter': {
