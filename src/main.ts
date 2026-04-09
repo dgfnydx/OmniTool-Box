@@ -4,6 +4,7 @@ import { inject } from '@vercel/analytics';
 import App from './App.vue';
 import router from './router';
 import i18n from './i18n';
+import './assets/styles/tools.css';
 
 // Initialize Vercel Analytics
 inject();
