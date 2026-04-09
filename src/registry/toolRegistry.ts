@@ -21,11 +21,11 @@ import {
   Flame,
   FileText,
   Baseline,
-  FileImage,
+  FileImage, 
   BarChart3,
-  Crop
-} from 'lucide-vue-next';
-
+  Crop,
+  Pipette
+  } from 'lucide-vue-next';
 export interface ToolMetadata {
   id: string;
   name: string;
@@ -235,6 +235,14 @@ export const tools: ToolMetadata[] = [
     icon: markRaw(Baseline),
     description: 'Preview system and local fonts.',
     component: () => import('../tools/design/FontViewer.vue')
+  },
+  {
+    id: 'image-color-picker',
+    name: 'Image Color Picker',
+    category: 'design',
+    icon: markRaw(Pipette),
+    description: 'Extract pixel colors from images with a magnifier.',
+    component: () => import('../tools/design/ColorPicker.vue')
   },
   {
     id: 'image-cropper',
