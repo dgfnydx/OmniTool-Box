@@ -16,10 +16,19 @@ const cropper = ref<Cropper | null>(null);
 const aspectRatio = ref<number | null>(null);
 const customWidth = ref<number>(1);
 const customHeight = ref<number>(1);
+const targetWidth = ref<number | null>(null);
+const targetHeight = ref<number | null>(null);
 
 const applyCustomRatio = () => {
   if (customWidth.value > 0 && customHeight.value > 0) {
     const ratio = customWidth.value / customHeight.value;
+    setAspectRatio(ratio);
+  }
+};
+
+const applyCustomSize = () => {
+  if (targetWidth.value && targetHeight.value && targetWidth.value > 0 && targetHeight.value > 0) {
+    const ratio = targetWidth.value / targetHeight.value;
     setAspectRatio(ratio);
   }
 };
@@ -107,13 +116,18 @@ const clearImage = () => {
 const downloadCroppedImage = () => {
   if (!cropper.value) return;
 
-  const canvas = cropper.value.getCroppedCanvas({
+  const canvasOptions: any = {
     imageSmoothingEnabled: true,
     imageSmoothingQuality: 'high',
-  });
+  };
+
+  if (targetWidth.value && targetWidth.value > 0) canvasOptions.width = targetWidth.value;
+  if (targetHeight.value && targetHeight.value > 0) canvasOptions.height = targetHeight.value;
+
+  const canvas = cropper.value.getCroppedCanvas(canvasOptions);
 
   if (!canvas) {
-    toast.show(t('common.common.actions.failed'), 'error');
+    toast.show(t('common.actions.failed'), 'error');
     return;
   }
 
@@ -199,7 +213,7 @@ onUnmounted(() => {
 
         <div class="tool-group">
           <label>{{ t('tools.image-cropper.customRatio') }}</label>
-          <div class="custom-ratio-inputs">
+          <div class="custom-inputs-row">
             <div class="input-with-label">
               <span>{{ t('tools.image-cropper.width') }}</span>
               <input 
@@ -216,6 +230,32 @@ onUnmounted(() => {
                 v-model.number="customHeight" 
                 min="1"
                 @input="applyCustomRatio"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="tool-group">
+          <label>{{ t('tools.image-cropper.customSize') }}</label>
+          <div class="custom-inputs-column">
+            <div class="input-with-label">
+              <span>{{ t('tools.image-cropper.width') }}</span>
+              <input 
+                type="number" 
+                v-model.number="targetWidth" 
+                min="1"
+                placeholder="Auto"
+                @input="applyCustomSize"
+              />
+            </div>
+            <div class="input-with-label">
+              <span>{{ t('tools.image-cropper.height') }}</span>
+              <input 
+                type="number" 
+                v-model.number="targetHeight" 
+                min="1"
+                placeholder="Auto"
+                @input="applyCustomSize"
               />
             </div>
           </div>
@@ -250,8 +290,7 @@ onUnmounted(() => {
 
 <style scoped>
 .tool-container {
-  max-width: 1000px;
-  margin: 0 auto;
+  width: 100%;
 }
 
 .upload-area {
@@ -319,7 +358,12 @@ onUnmounted(() => {
   gap: 0.5rem;
 }
 
-.custom-ratio-inputs {
+.custom-inputs-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.custom-inputs-column {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -332,6 +376,8 @@ onUnmounted(() => {
   border: 1px solid var(--border-color);
   border-radius: 6px;
   padding: 0 0.5rem;
+  flex: 1;
+  min-width: 0;
 }
 
 .input-with-label span {

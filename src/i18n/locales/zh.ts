@@ -398,6 +398,7 @@ export default {
       reset: '重置状态',
       download: '下载裁剪后的图片',
       customRatio: '自定义比例',
+      customSize: '自定义尺寸 (px)',
       width: '宽',
       height: '高'
     },

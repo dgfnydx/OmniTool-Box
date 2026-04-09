@@ -121,7 +121,7 @@ watch(() => props.id, async (newId) => {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: 20px;
-  padding: 2rem;
+  padding: 1.25rem;
   min-height: 500px;
   position: relative;
   box-shadow: var(--card-shadow);

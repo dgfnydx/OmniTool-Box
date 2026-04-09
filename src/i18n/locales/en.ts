@@ -262,6 +262,7 @@ export default {
       reset: 'Reset',
       download: 'Download Cropped Image',
       customRatio: 'Custom Ratio',
+      customSize: 'Custom Size (px)',
       width: 'W',
       height: 'H'
     },
