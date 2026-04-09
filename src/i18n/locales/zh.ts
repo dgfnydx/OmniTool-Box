@@ -8,9 +8,12 @@ export default {
     search: '搜索工具...',
     home: '首页',
     categories: {
-      developer: '开发者工具',
-      daily: '日常工具',
-      design: '设计工具'
+      developer: '开发工具',
+      text: '文本处理',
+      image: '图片处理',
+      design: '设计艺术',
+      calc: '数学计算',
+      life: '生活工具'
     },
     actions: {
       format: '格式化',

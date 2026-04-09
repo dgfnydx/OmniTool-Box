@@ -14,7 +14,9 @@ import {
   Languages,
   Command,
   Sun,
-  Moon
+  Moon,
+  Scale,
+  FileImage
 } from 'lucide-vue-next';
 import { tools } from '../registry/toolRegistry';
 
@@ -63,8 +65,11 @@ const filteredTools = computed(() => {
 
 const categories = [
   { id: 'developer', name: 'developer', icon: CodeXml },
-  { id: 'daily', name: 'daily', icon: LayoutGrid },
-  { id: 'design', name: 'design', icon: Palette }
+  { id: 'text', name: 'text', icon: Languages },
+  { id: 'image', icon: FileImage },
+  { id: 'design', name: 'design', icon: Palette },
+  { id: 'calc', name: 'calc', icon: Scale },
+  { id: 'life', name: 'life', icon: LayoutGrid }
 ];
 
 const handleToolClick = () => {
@@ -101,7 +106,7 @@ const handleBlur = () => {
 
         <div v-for="cat in categories" :key="cat.id" class="nav-section">
           <template v-if="filteredTools.some(t => t.category === cat.id)">
-            <div class="section-title">{{ t(`common.categories.${cat.name}`) }}</div>
+            <div class="section-title">{{ t(`common.categories.${cat.id}`) }}</div>
             <RouterLink 
               v-for="tool in filteredTools.filter(t => t.category === cat.id)" 
               :key="tool.id"

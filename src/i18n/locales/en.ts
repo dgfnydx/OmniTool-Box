@@ -8,9 +8,12 @@ export default {
     search: 'Search tools...',
     home: 'Home',
     categories: {
-      developer: 'Developer',
-      daily: 'Daily',
-      design: 'Design'
+      developer: 'Development',
+      text: 'Text & Content',
+      image: 'Image Processing',
+      design: 'Design & Art',
+      calc: 'Math & Finance',
+      life: 'Life & Tools'
     },
     actions: {
       format: 'Format',
