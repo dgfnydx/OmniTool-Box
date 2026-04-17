@@ -1,121 +1,95 @@
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue';
-import { useI18n } from 'vue-i18n';
-import { useToastStore } from '../../store/toast';
+import { ref, watch } from 'vue';
+import { useTool } from '../../composables/useTool';
+import { useCurrentTime } from '../../composables/useCurrentTime';
+import { formatTimestamp, parseDateToTimestamp, getCurrentDateTimeString } from '../../utils/date';
+import ToolLayout from '../../components/common/ToolLayout.vue';
 import { Copy } from 'lucide-vue-next';
 
-const { t } = useI18n();
-const toast = useToastStore();
-const currentTimestamp = ref(Math.floor(Date.now() / 1000));
-const intervalId = ref<any>(null);
+const { copy, t } = useTool();
+const { currentTimestamp } = useCurrentTime();
 
+// TS to Date conversion
 const tsInput = ref(currentTimestamp.value.toString());
 const dateResult = ref('');
 
-const dateInput = ref(new Date().toISOString().slice(0, 19).replace('T', ' '));
+// Date to TS conversion
+const dateInput = ref(getCurrentDateTimeString());
 const tsResult = ref('');
 
 const convertTsToDate = () => {
-  try {
-    const ts = parseInt(tsInput.value);
-    if (isNaN(ts)) throw new Error();
-    const date = new Date(ts * (tsInput.value.length > 11 ? 1 : 1000));
-    dateResult.value = date.toLocaleString();
-  } catch (e) {
-    dateResult.value = t('tools.timestamp-converter.invalidTs');
-  }
+  const result = formatTimestamp(tsInput.value);
+  dateResult.value = result || t('tools.timestamp-converter.invalidTs');
 };
 
 const convertDateToTs = () => {
-  try {
-    const date = new Date(dateInput.value);
-    if (isNaN(date.getTime())) throw new Error();
-    tsResult.value = Math.floor(date.getTime() / 1000).toString();
-  } catch (e) {
-    tsResult.value = t('tools.timestamp-converter.invalidDate');
-  }
+  const result = parseDateToTimestamp(dateInput.value);
+  tsResult.value = result !== null ? result.toString() : t('tools.timestamp-converter.invalidDate');
 };
 
-const copyToClipboard = (text: string) => {
-  if (text) {
-    navigator.clipboard.writeText(text);
-    toast.show(t('common.actions.copied'));
-  }
-};
+// Initial conversion
+convertTsToDate();
+convertDateToTs();
 
-const updateCurrentTs = () => {
-  currentTimestamp.value = Math.floor(Date.now() / 1000);
-};
-
-onMounted(() => {
-  convertTsToDate();
-  convertDateToTs();
-  intervalId.value = setInterval(updateCurrentTs, 1000);
-});
-
-onUnmounted(() => {
-  clearInterval(intervalId.value);
-});
+// React to inputs
+watch(tsInput, convertTsToDate);
+watch(dateInput, convertDateToTs);
 </script>
 
 <template>
   <div class="tool-container">
     <!-- Current Time Banner -->
-    <div class="current-time-card">
+    <div class="current-time-banner">
       <div class="time-label">{{ t('tools.timestamp-converter.currentTs') }}</div>
       <div class="time-value">
         <code>{{ currentTimestamp }}</code>
-        <button class="icon-btn small" @click="copyToClipboard(currentTimestamp.toString())">
-          <Copy :size="14" />
+        <button class="btn-text" @click="copy(currentTimestamp.toString())">
+          <Copy :size="16" />
         </button>
       </div>
     </div>
 
-    <div class="converter-grid">
-      <!-- Timestamp to Date -->
-      <div class="card">
-        <h3>{{ t('tools.timestamp-converter.tsToDate') }}</h3>
-        <div class="input-group">
-          <input v-model="tsInput" type="text" placeholder="1711872000" @input="convertTsToDate" />
-          <div class="unit-select">
-            <span>seconds</span>
+    <ToolLayout
+      :input-label="t('tools.timestamp-converter.tsToDate')"
+      :output-label="t('tools.timestamp-converter.dateToTs')"
+      @clear="tsInput = ''; dateInput = ''"
+    >
+      <template #input>
+        <div class="tool-editor-section">
+          <div class="input-with-label">
+            <input v-model="tsInput" type="text" class="tool-input" placeholder="1711872000" />
+            <span class="input-suffix">seconds</span>
+          </div>
+          <div class="result-display">
+            <label>{{ t('tools.timestamp-converter.resultDate') }}</label>
+            <div class="result-row">
+              <code>{{ dateResult }}</code>
+              <button class="btn-text" @click="copy(dateResult)"><Copy :size="14" /></button>
+            </div>
           </div>
         </div>
-        <div class="result-box">
-          <label>{{ t('tools.timestamp-converter.resultDate') }}</label>
-          <div class="result-value">
-            <code>{{ dateResult }}</code>
-            <button v-if="dateResult" class="icon-btn small" @click="copyToClipboard(dateResult)">
-              <Copy :size="14" />
-            </button>
-          </div>
-        </div>
-      </div>
+      </template>
 
-      <!-- Date to Timestamp -->
-      <div class="card">
-        <h3>{{ t('tools.timestamp-converter.dateToTs') }}</h3>
-        <div class="input-group">
-          <input v-model="dateInput" type="text" placeholder="2026-03-31 09:00:00" @input="convertDateToTs" />
-        </div>
-        <div class="result-box">
-          <label>{{ t('tools.timestamp-converter.resultTs') }}</label>
-          <div class="result-value">
-            <code>{{ tsResult }}</code>
-            <button v-if="tsResult" class="icon-btn small" @click="copyToClipboard(tsResult)">
-              <Copy :size="14" />
-            </button>
+      <template #output>
+        <div class="tool-editor-section">
+          <input v-model="dateInput" type="text" class="tool-input" placeholder="2026-03-31 09:00:00" />
+          <div class="result-display">
+            <label>{{ t('tools.timestamp-converter.resultTs') }}</label>
+            <div class="result-row">
+              <code>{{ tsResult }}</code>
+              <button class="btn-text" @click="copy(tsResult)"><Copy :size="14" /></button>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
+      </template>
+    </ToolLayout>
   </div>
 </template>
 
 <style scoped>
-.current-time-card {
+.current-time-banner {
   background: var(--bg-secondary);
-  padding: 1.25rem;
+  padding: 1.5rem;
   border-radius: 12px;
   display: flex;
   justify-content: space-between;
@@ -138,96 +112,56 @@ onUnmounted(() => {
   color: var(--accent-color);
 }
 
-.converter-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-}
-
-.card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-}
-
-.card h3 {
-  margin: 0;
-  font-size: 1.1rem;
-}
-
-.input-group {
-  display: flex;
-  gap: 0.5rem;
-}
-
-input {
-  flex: 1;
-  height: 40px;
+.tool-input {
+  width: 100%;
+  height: 48px;
   padding: 0 1rem;
   border-radius: 8px;
   border: 1px solid var(--border-color);
-  background: var(--bg-secondary);
+  background: var(--bg-card);
   color: var(--text-primary);
+  font-family: monospace;
   outline: none;
 }
 
-input:focus {
-  border-color: var(--accent-color);
+.input-with-label {
+  position: relative;
 }
 
-.result-box {
-  background: var(--bg-secondary);
-  padding: 1rem;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.result-box label {
+.input-suffix {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
   font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.result-display {
+  background: var(--bg-secondary);
+  padding: 1.25rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.result-display label {
+  font-size: 0.7rem;
   font-weight: 700;
   color: var(--text-muted);
   text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.5rem;
 }
 
-.result-value {
+.result-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 code {
-  font-family: monospace;
-  font-size: 1rem;
+  font-family: 'JetBrains Mono', monospace;
   font-weight: 600;
-}
-
-.icon-btn.small {
-  width: 28px;
-  height: 28px;
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  color: var(--text-secondary);
-}
-
-.icon-btn.small:hover {
-  border-color: var(--accent-color);
-  color: var(--accent-color);
-}
-
-@media (max-width: 900px) {
-  .converter-grid {
-    grid-template-columns: 1fr;
-  }
+  font-size: 1.1rem;
 }
 </style>

@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import ToolButton from './ToolButton.vue';
+import { Trash2, Copy } from 'lucide-vue-next';
+
 interface Props {
   inputLabel?: string;
   outputLabel?: string;
@@ -17,7 +20,13 @@ defineEmits(['clear', 'copy']);
         <label class="tool-label">{{ inputLabel || 'Input' }}</label>
         <div class="tool-actions">
           <slot name="input-actions"></slot>
-          <button @click="$emit('clear')" class="btn-secondary">{{ $t('common.actions.clear') }}</button>
+          <ToolButton 
+            type="secondary" 
+            :icon="Trash2" 
+            @click="$emit('clear')"
+          >
+            {{ $t('common.actions.clear') }}
+          </ToolButton>
         </div>
       </div>
       <slot name="input"></slot>
@@ -29,7 +38,14 @@ defineEmits(['clear', 'copy']);
         <label class="tool-label">{{ outputLabel || 'Output' }}</label>
         <div class="tool-actions">
           <slot name="output-actions"></slot>
-          <button @click="$emit('copy')" class="btn-text" v-if="!$slots['output-actions']">{{ $t('common.actions.copy') }}</button>
+          <ToolButton 
+            v-if="!$slots['output-actions']"
+            type="text" 
+            :icon="Copy" 
+            @click="$emit('copy')"
+          >
+            {{ $t('common.actions.copy') }}
+          </ToolButton>
         </div>
       </div>
       <div v-if="error" class="tool-error-msg">{{ error }}</div>

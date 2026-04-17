@@ -1,30 +1,23 @@
 <script setup lang="ts">
 import { useTool } from '../../composables/useTool';
 import ToolLayout from '../../components/common/ToolLayout.vue';
+import ToolArea from '../../components/common/ToolArea.vue';
+import ToolButton from '../../components/common/ToolButton.vue';
+import { Lock, Unlock } from 'lucide-vue-next';
 
-const { input, output, error, clear, copy, t } = useTool();
+const { input, output, error, isLoading, clear, copy, tryExecute, t } = useTool();
 
-const encodeBase64 = () => {
-  try {
-    error.value = '';
-    const bytes = new TextEncoder().encode(input.value);
-    const binString = Array.from(bytes, (byte) => String.fromCharCode(byte)).join("");
-    output.value = btoa(binString);
-  } catch (e: any) {
-    error.value = t('tools.base64-converter.encodeError') + ': ' + e.message;
-  }
-};
+const encodeBase64 = () => tryExecute(() => {
+  const bytes = new TextEncoder().encode(input.value);
+  const binString = Array.from(bytes, (byte) => String.fromCharCode(byte)).join("");
+  output.value = btoa(binString);
+}, 'tools.base64-converter.encodeError');
 
-const decodeBase64 = () => {
-  try {
-    error.value = '';
-    const binString = atob(input.value);
-    const bytes = Uint8Array.from(binString, (m) => m.codePointAt(0)!);
-    output.value = new TextDecoder().decode(bytes);
-  } catch (e: any) {
-    error.value = t('tools.base64-converter.decodeError') + ': ' + e.message;
-  }
-};
+const decodeBase64 = () => tryExecute(() => {
+  const binString = atob(input.value);
+  const bytes = Uint8Array.from(binString, (m) => m.codePointAt(0)!);
+  output.value = new TextDecoder().decode(bytes);
+}, 'tools.base64-converter.decodeError');
 </script>
 
 <template>
@@ -36,27 +29,27 @@ const decodeBase64 = () => {
     @copy="copy()"
   >
     <template #input-actions>
-      <button @click="encodeBase64" class="btn-primary">{{ t('tools.base64-converter.encode') }}</button>
-      <button @click="decodeBase64" class="btn-primary">{{ t('tools.base64-converter.decode') }}</button>
+      <ToolButton :icon="Lock" :loading="isLoading" @click="encodeBase64">
+        {{ t('tools.base64-converter.encode') }}
+      </ToolButton>
+      <ToolButton :icon="Unlock" :loading="isLoading" @click="decodeBase64">
+        {{ t('tools.base64-converter.decode') }}
+      </ToolButton>
     </template>
     
     <template #input>
-      <textarea 
+      <ToolArea 
         v-model="input" 
-        class="tool-textarea"
         :placeholder="t('tools.base64-converter.inputPlaceholder')" 
-        spellcheck="false"
-      ></textarea>
+      />
     </template>
 
     <template #output>
-      <textarea 
-        :value="output" 
+      <ToolArea 
+        v-model="output" 
         readonly 
-        class="tool-textarea"
         :placeholder="t('tools.base64-converter.outputPlaceholder')" 
-        spellcheck="false"
-      ></textarea>
+      />
     </template>
   </ToolLayout>
 </template>
