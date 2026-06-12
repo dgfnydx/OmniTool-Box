@@ -3,7 +3,7 @@ import { useI18n } from 'vue-i18n';
 import { useToastStore } from '../store/toast';
 
 export function useTool() {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
   const toast = useToastStore();
   
   const input = ref('');
@@ -30,6 +30,7 @@ export function useTool() {
     error,
     clear,
     copy,
-    t
+    t,
+    locale
   };
 }
