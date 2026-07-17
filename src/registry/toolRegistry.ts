@@ -14,6 +14,12 @@ export interface ToolMetadata {
 // 自动导入所有工具组件
 const toolComponents = import.meta.glob('../tools/**/*.vue');
 
+// 包装函数避免类型推断过深
+function getI18nKey(key: string): string {
+  // @ts-ignore: vue-i18n type instantiation issue
+  return i18n.global.t(key);
+}
+
 export const tools: ToolMetadata[] = toolConfigs.map(config => {
   const fullPath = `../tools/${config.path}`;
   const componentLoader = toolComponents[fullPath];
@@ -27,11 +33,11 @@ export const tools: ToolMetadata[] = toolConfigs.map(config => {
     category: config.category,
     icon: config.icon,
     // 使用 getter 以支持语言切换
-    get name() {
-      return i18n.global.t(`tools.${config.id}.name`);
+    get name(): string {
+      return getI18nKey(`tools.${config.id}.name`);
     },
-    get description() {
-      return i18n.global.t(`tools.${config.id}.description`);
+    get description(): string {
+      return getI18nKey(`tools.${config.id}.description`);
     },
     component: componentLoader as () => Promise<any>
   };

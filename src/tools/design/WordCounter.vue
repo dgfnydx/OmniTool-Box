@@ -13,7 +13,7 @@ import {
 
 const { input, clear, copy, t } = useTool();
 
-const stats = computed(() => analyzeText(input.value)) as unknown as Record<string, number>;
+const stats = computed(() => analyzeText(input.value));
 
 const toUppercase = () => {
   input.value = input.value.toUpperCase();
@@ -65,7 +65,7 @@ const STAT_ITEMS = [
             <div v-for="item in STAT_ITEMS" :key="item.key" class="stat-card">
               <div class="stat-icon"><component :is="item.icon" :size="18" /></div>
               <div class="stat-info">
-                <div class="stat-value">{{ stats[item.key] }}{{ item.unit }}</div>
+                <div class="stat-value">{{ (stats as any)[item.key] }}{{ item.unit }}</div>
                 <div class="stat-label">{{ t(`tools.word-counter.${item.key === 'charsWithSpaces' ? 'chars' : item.key}`) }}</div>
               </div>
             </div>
