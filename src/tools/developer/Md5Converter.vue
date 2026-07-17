@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { useTool } from '../../composables/useTool';
+import { md5 } from '../../utils/crypto';
 import ToolLayout from '../../components/common/ToolLayout.vue';
 
 const { input, output, error, clear, copy, t } = useTool();
@@ -8,15 +9,7 @@ const { input, output, error, clear, copy, t } = useTool();
 type Mode = 'single' | 'batch';
 const mode = ref<Mode>('single');
 
-const hashSingle = async (text: string): Promise<string> => {
-  const encoder = new TextEncoder();
-  const data = encoder.encode(text);
-  const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-  const hashArray = Array.from(new Uint8Array(hashBuffer));
-  return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-};
-
-const sha256 = async () => {
+const compute = () => {
   try {
     error.value = '';
     const trimmedInput = input.value.trim();
@@ -27,13 +20,13 @@ const sha256 = async () => {
     }
 
     if (mode.value === 'single') {
-      output.value = await hashSingle(input.value);
+      output.value = md5(input.value);
     } else {
       const lines = input.value.split('\n');
       const nonEmptyLines = lines.filter(line => line.trim() !== '');
       const limit = 200;
       if (nonEmptyLines.length > limit) {
-        error.value = t('tools.sha256-converter.limitError', { limit });
+        error.value = t('tools.md5-converter.limitError', { limit });
         return;
       }
       const results: string[] = [];
@@ -41,21 +34,21 @@ const sha256 = async () => {
         if (line.trim() === '') {
           results.push('');
         } else {
-          results.push(await hashSingle(line));
+          results.push(md5(line));
         }
       }
       output.value = results.join('\n');
     }
   } catch (e: any) {
-    error.value = t('tools.sha256-converter.hashError') + ': ' + e.message;
+    error.value = t('tools.md5-converter.hashError') + ': ' + e.message;
   }
 };
 </script>
 
 <template>
   <ToolLayout
-    :input-label="t('tools.sha256-converter.input')"
-    :output-label="t('tools.sha256-converter.output')"
+    :input-label="t('tools.md5-converter.input')"
+    :output-label="t('tools.md5-converter.output')"
     :error="error"
     @clear="clear"
     @copy="copy()"
@@ -65,20 +58,20 @@ const sha256 = async () => {
         <button
           :class="['mode-btn', { active: mode === 'single' }]"
           @click="mode = 'single'"
-        >{{ t('tools.sha256-converter.singleMode') }}</button>
+        >{{ t('tools.md5-converter.singleMode') }}</button>
         <button
           :class="['mode-btn', { active: mode === 'batch' }]"
           @click="mode = 'batch'"
-        >{{ t('tools.sha256-converter.batchMode') }}</button>
+        >{{ t('tools.md5-converter.batchMode') }}</button>
       </div>
-      <button @click="sha256" class="btn-primary">{{ t('tools.sha256-converter.hash') }}</button>
+      <button @click="compute" class="btn-primary">{{ t('tools.md5-converter.hash') }}</button>
     </template>
 
     <template #input>
       <textarea
         v-model="input"
         class="tool-textarea"
-        :placeholder="mode === 'single' ? t('tools.sha256-converter.inputPlaceholder') : t('tools.sha256-converter.batchPlaceholder')"
+        :placeholder="mode === 'single' ? t('tools.md5-converter.inputPlaceholder') : t('tools.md5-converter.batchPlaceholder')"
         spellcheck="false"
       ></textarea>
     </template>
@@ -88,7 +81,7 @@ const sha256 = async () => {
         :value="output"
         readonly
         class="tool-textarea"
-        :placeholder="t('tools.sha256-converter.outputPlaceholder')"
+        :placeholder="t('tools.md5-converter.outputPlaceholder')"
         spellcheck="false"
       ></textarea>
     </template>
