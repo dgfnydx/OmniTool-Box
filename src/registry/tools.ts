@@ -24,7 +24,8 @@ import {
   FileImage,
   BarChart3,
   Crop,
-  Pipette
+  Pipette,
+  Lock
 } from 'lucide-vue-next';
 
 export type Category = 'developer' | 'text' | 'image' | 'design' | 'calc' | 'life';
@@ -40,6 +41,7 @@ export const toolConfigs: ToolConfig[] = [
   // Developer
   { id: 'json-formatter', category: 'developer', icon: markRaw(CodeXml), path: 'developer/JsonFormatter.vue' },
   { id: 'base64-converter', category: 'developer', icon: markRaw(Binary), path: 'developer/Base64Converter.vue' },
+  { id: 'sha256-converter', category: 'developer', icon: markRaw(Lock), path: 'developer/Sha256Converter.vue' },
   { id: 'timestamp-converter', category: 'developer', icon: markRaw(Clock), path: 'developer/TimestampConverter.vue' },
   { id: 'base-converter', category: 'developer', icon: markRaw(Binary), path: 'developer/BaseConverter.vue' },
   { id: 'token-counter', category: 'developer', icon: markRaw(CodeXml), path: 'developer/TokenCounter.vue' },
