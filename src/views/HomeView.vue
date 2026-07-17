@@ -19,7 +19,7 @@ const groupedTools = computed(() => {
 });
 
 // Category order for display
-const categoryOrder = ['developer', 'text', 'image', 'design', 'calc', 'life'];
+const categoryOrder = ['developer', 'crypto', 'text', 'image', 'design', 'calc', 'life'];
 </script>
 
 <template>

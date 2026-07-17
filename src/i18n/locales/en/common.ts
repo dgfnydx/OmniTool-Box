@@ -9,6 +9,7 @@ export default {
     home: 'Home',
     categories: {
       developer: 'Development',
+      crypto: 'Encryption',
       text: 'Text & Content',
       image: 'Image Processing',
       design: 'Design & Art',

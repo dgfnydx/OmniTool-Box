@@ -9,6 +9,7 @@ export default {
     home: '首页',
     categories: {
       developer: '开发工具',
+      crypto: '加密工具',
       text: '文本处理',
       image: '图片处理',
       design: '设计艺术',

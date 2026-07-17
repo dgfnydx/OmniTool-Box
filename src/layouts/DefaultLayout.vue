@@ -16,7 +16,8 @@ import {
   Sun,
   Moon,
   Scale,
-  FileImage
+  FileImage,
+  Lock
 } from 'lucide-vue-next';
 import { tools } from '../registry/toolRegistry';
 
@@ -65,6 +66,7 @@ const filteredTools = computed(() => {
 
 const categories = [
   { id: 'developer', name: 'developer', icon: CodeXml },
+  { id: 'crypto', name: 'crypto', icon: Lock },
   { id: 'text', name: 'text', icon: Languages },
   { id: 'image', icon: FileImage },
   { id: 'design', name: 'design', icon: Palette },

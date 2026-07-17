@@ -29,7 +29,7 @@ import {
   Shield
 } from 'lucide-vue-next';
 
-export type Category = 'developer' | 'text' | 'image' | 'design' | 'calc' | 'life';
+export type Category = 'developer' | 'crypto' | 'text' | 'image' | 'design' | 'calc' | 'life';
 
 export interface ToolConfig {
   id: string;
@@ -42,12 +42,15 @@ export const toolConfigs: ToolConfig[] = [
   // Developer
   { id: 'json-formatter', category: 'developer', icon: markRaw(CodeXml), path: 'developer/JsonFormatter.vue' },
   { id: 'base64-converter', category: 'developer', icon: markRaw(Binary), path: 'developer/Base64Converter.vue' },
-  { id: 'sha256-converter', category: 'developer', icon: markRaw(Lock), path: 'developer/Sha256Converter.vue' },
-  { id: 'md5-converter', category: 'developer', icon: markRaw(Shield), path: 'developer/Md5Converter.vue' },
   { id: 'timestamp-converter', category: 'developer', icon: markRaw(Clock), path: 'developer/TimestampConverter.vue' },
   { id: 'base-converter', category: 'developer', icon: markRaw(Binary), path: 'developer/BaseConverter.vue' },
   { id: 'token-counter', category: 'developer', icon: markRaw(CodeXml), path: 'developer/TokenCounter.vue' },
   { id: 'doc-comparator', category: 'developer', icon: markRaw(FileText), path: 'developer/DocComparator.vue' },
+
+  // Crypto
+  { id: 'sha256-converter', category: 'crypto', icon: markRaw(Lock), path: 'developer/Sha256Converter.vue' },
+  { id: 'md5-converter', category: 'crypto', icon: markRaw(Shield), path: 'developer/Md5Converter.vue' },
+
   { id: 'morse-converter', category: 'text', icon: markRaw(Signal), path: 'developer/MorseCodeConverter.vue' },
 
   // Text / Daily (Merged into logical categories)
