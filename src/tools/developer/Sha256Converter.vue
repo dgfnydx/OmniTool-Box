@@ -31,7 +31,7 @@ const sha256 = async () => {
     } else {
       const lines = input.value.split('\n');
       const nonEmptyLines = lines.filter(line => line.trim() !== '');
-      const limit = 200;
+      const limit = 1000;
       if (nonEmptyLines.length > limit) {
         error.value = t('tools.sha256-converter.limitError', { limit });
         return;
